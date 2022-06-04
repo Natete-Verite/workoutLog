@@ -4,6 +4,6 @@
         android:drawable="@drawable/workoutimg"/>
     <item>
         <bitmap android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:gravity="center" android:src="@drawable/workoutimg" />
+            android:gravity="fill" android:src="@drawable/workoutimg" />
     </item>
 </selector>
