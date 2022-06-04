@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">WorkoutLog</string>
+    <string name="email_required">Email is required</string>
+    <string name="Password_required">Password is required</string>
+    <string name="First_Name_required">name required</string>
+    <string name="Second_name_required">name required</string>
+    <string name="Confirm_password">cor</string>
+    <string name="first_name_required">First name is required</string>
+    <string name="secon_name_required">Second name is required</string>
+    <string name="email_is_required">Email is required</string>
+    <string name="password_is_required">Password is required</string>
+    <string name="email_confirmation">Confirm password</string>
 </resources>
