@@ -61,7 +61,7 @@ class SignUpActivity : AppCompatActivity() {
             tilEmail.error = getString(R.string.email_is_required)
         }
         if (password.isBlank()) {
-            tilPassword.error = getString(R.string.password_is_required)
+            tilPassword.error = getString(R.string.password_required)
         }
         if (confirm.isBlank()){
             tilConfirm.error = getString(R.string.email_confirmation)

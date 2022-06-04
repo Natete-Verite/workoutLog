@@ -10,4 +10,5 @@
     <string name="email_is_required">Email is required</string>
     <string name="password_is_required">Password is required</string>
     <string name="email_confirmation">Confirm password</string>
+    <string name="password_required">Password is required</string>
 </resources>
