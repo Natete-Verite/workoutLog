@@ -11,4 +11,10 @@
     <string name="password_is_required">Password is required</string>
     <string name="email_confirmation">Confirm password</string>
     <string name="password_required">Password is required</string>
+    <string name="plan">Plan</string>
+    <string name="track">Track</string>
+    <string name="profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="plan_fragment">Plan Fragment</string>
 </resources>
