@@ -28,6 +28,8 @@ class LoginActivity : AppCompatActivity() {
 
         btnLogin.setOnClickListener {
         validateLogin()
+            startActivity(Intent(this,HomeActivity::class.java))
+            finish()
         }
         tvSignup.setOnClickListener {
             val intent = Intent(this,SignUpActivity::class.java)
@@ -52,8 +54,7 @@ class LoginActivity : AppCompatActivity() {
             error = true
         }
         if (!error){
-            startActivity(Intent(this,HomeActivity::class.java))
-            finish()
+
         }
     }
 }
