@@ -67,7 +67,7 @@ class SignUpActivity : AppCompatActivity() {
             tilConfirm.error = getString(R.string.email_confirmation)
         }
         if (password != confirm){
-            tilPassword.error = "Password does not match"
+            tilPassword.error = getString(R.string.password_does_not_match)
         }
     }
 }
