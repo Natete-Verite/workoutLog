@@ -1,11 +1,9 @@
-package dev.verite.workoutlog
+package dev.verite.workoutlog.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.FragmentContainerView
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import dev.verite.workoutlog.R
 import dev.verite.workoutlog.databinding.ActivityHomeBinding
-import dev.verite.workoutlog.databinding.ActivitySignUpBinding
 
 class HomeActivity : AppCompatActivity() {
     lateinit var binding: ActivityHomeBinding

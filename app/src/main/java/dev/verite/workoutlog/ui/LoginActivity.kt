@@ -1,12 +1,8 @@
-package dev.verite.workoutlog
+package dev.verite.workoutlog.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
 import dev.verite.workoutlog.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -18,11 +14,11 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnLogin.setOnClickListener {
         validateLogin()
-            startActivity(Intent(this,HomeActivity::class.java))
+            startActivity(Intent(this, HomeActivity::class.java))
             finish()
         }
         binding.tvSignup.setOnClickListener {
-            val intent = Intent(this,SignUpActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
     }
