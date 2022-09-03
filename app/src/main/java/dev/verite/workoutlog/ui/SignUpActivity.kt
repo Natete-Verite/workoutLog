@@ -66,8 +66,10 @@ class SignUpActivity : AppCompatActivity() {
             binding.tilPassword.error = getString(R.string.password_does_not_match)
         }
         if (!error){
-            val registerRequest = RegisterRequest(firstName, secondName, email, phoneNumber, password)
+            val registerRequest = RegisterRequest(firstName, secondName,
+                email, phoneNumber, password)
             makeRegistrationRequest(registerRequest)
+            startActivity(Intent(this,LoginActivity::class.java))
         }
     }
     fun makeRegistrationRequest(registerRequest: RegisterRequest){
@@ -89,7 +91,6 @@ class SignUpActivity : AppCompatActivity() {
                 }
 
             }
-
             override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
                 Toast.makeText(baseContext,t.message,Toast.LENGTH_LONG).show()
             }
