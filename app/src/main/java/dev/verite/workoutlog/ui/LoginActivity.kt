@@ -13,6 +13,7 @@ import dev.verite.workoutlog.models.LoginRequest
 import dev.verite.workoutlog.models.LoginResponse
 import dev.verite.workoutlog.api.ApiClient
 import dev.verite.workoutlog.api.ApiInterface
+import dev.verite.workoutlog.util.Constants
 import dev.verite.workoutlog.viewmodel.UserViewModel
 import retrofit2.Call
 import retrofit2.Callback
@@ -28,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        sharedPrefs = getSharedPreferences("WORKOUTLOG_PREFS", MODE_PRIVATE)
+        sharedPrefs = getSharedPreferences(Constants.prefsFile, MODE_PRIVATE)
 
         binding.btnLogin.setOnClickListener {
         validateLogin()
@@ -74,9 +75,10 @@ class LoginActivity : AppCompatActivity() {
 
     fun saveLoginDetails(loginResponse: LoginResponse){
         val editor = sharedPrefs.edit()
-        editor.putString("ACCESS_TOKEN", loginResponse.accessToken)
-        editor.putString("USER_ID", loginResponse.userId)
-        editor.putString("PROFILE_ID", loginResponse.profileId)
+        val token = "Bearer ${loginResponse.accessToken}"
+        editor.putString(Constants.accessToken, token)
+        editor.putString(Constants.userId, loginResponse.userId)
+        editor.putString(Constants.profileId, loginResponse.profileId)
         editor.apply()
     }
 }
