@@ -26,17 +26,6 @@ class HomeActivity : AppCompatActivity() {
         val token = sharedPrefs.getString(Constants.accessToken, Constants.EMPTY_STRINGS)
         exerciseViewModel.fetchExerciseCategories(token!!)
 
-        binding.tvLogout.setOnClickListener {
-            sharedPrefs = getSharedPreferences(Constants.prefsFile, MODE_PRIVATE)
-            val editor = sharedPrefs.edit()
-            editor.putString("ACCESS_TOKEN", "")
-            editor.putString("USER_ID", "")
-            editor.putString("PROFILE_ID", "")
-            editor.apply()
-
-            startActivity(Intent(this,LoginActivity::class.java))
-            finish()
-        }
     }
 
     override fun onResume() {

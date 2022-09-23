@@ -1,14 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Profile Fragment" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="33dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_baseline_person_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvUsernamee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Username"
+            app:layout_constraintStart_toStartOf="@+id/imgProfile"
+            app:layout_constraintTop_toBottomOf="@+id/imgProfile" />
+
+        <TextView
+            android:id="@+id/tvEmaill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="emaill"
+            app:layout_constraintStart_toStartOf="@+id/tvUsernamee"
+            app:layout_constraintTop_toBottomOf="@+id/tvUsernamee" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_baseline_music_note_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <TextView
+            android:id="@+id/tvMusic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Music"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+        <ImageView
+            android:id="@+id/imgNotifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_baseline_notifications_24"
+            app:layout_constraintStart_toStartOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <TextView
+            android:id="@+id/tvNotifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Notifications"
+            app:layout_constraintStart_toEndOf="@+id/imgNotifications"
+            app:layout_constraintTop_toTopOf="@+id/imgNotifications" />
+
+        <ImageView
+            android:id="@+id/imgReinitialise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_baseline_power_settings_new_24"
+            app:layout_constraintStart_toStartOf="@+id/imgNotifications"
+            app:layout_constraintTop_toBottomOf="@+id/imgNotifications" />
+
+        <TextView
+            android:id="@+id/tvReinitialise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Reinitialise the progress"
+            app:layout_constraintStart_toEndOf="@+id/imgReinitialise"
+            app:layout_constraintTop_toTopOf="@+id/imgReinitialise" />
+
+        <ImageView
+            android:id="@+id/imgPreferences"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_baseline_favorite_24"
+            app:layout_constraintStart_toStartOf="@+id/imgReinitialise"
+            app:layout_constraintTop_toBottomOf="@+id/imgReinitialise" />
+
+        <TextView
+            android:id="@+id/tvPreferences"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Preferences"
+            app:layout_constraintStart_toEndOf="@+id/imgPreferences"
+            app:layout_constraintTop_toTopOf="@+id/imgPreferences" />
+
+        <ImageView
+            android:id="@+id/imgFeedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_baseline_email_24"
+            app:layout_constraintStart_toStartOf="@+id/imgPreferences"
+            app:layout_constraintTop_toBottomOf="@+id/imgPreferences" />
+
+        <TextView
+            android:id="@+id/tvFeedback"
+            android:layout_width="63dp"
+            android:layout_height="19dp"
+            android:layout_marginStart="16dp"
+            android:text="Feedback"
+            app:layout_constraintStart_toEndOf="@+id/imgFeedback"
+            app:layout_constraintTop_toTopOf="@+id/imgFeedback" />
+
+        <ImageView
+            android:id="@+id/imgLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_baseline_power_settings_new_24"
+            app:layout_constraintStart_toStartOf="@+id/imgFeedback"
+            app:layout_constraintTop_toBottomOf="@+id/imgFeedback" />
+
+        <TextView
+            android:id="@+id/tvLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Logout"
+            app:layout_constraintStart_toEndOf="@+id/imgLogout"
+            app:layout_constraintTop_toTopOf="@+id/imgLogout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
