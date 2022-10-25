@@ -16,6 +16,7 @@ class HomeActivity : AppCompatActivity() {
     lateinit var binding: ActivityHomeBinding
     lateinit var sharedPrefs: SharedPreferences
     val exerciseViewModel: ExerciseViewModel by viewModels()
+    lateinit var token: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,15 +24,25 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
         setupBottomNav()
         sharedPrefs = getSharedPreferences(Constants.prefsFile, MODE_PRIVATE)
-        val token = sharedPrefs.getString(Constants.accessToken, Constants.EMPTY_STRINGS)
-        exerciseViewModel.fetchExerciseCategories(token!!)
+        token = sharedPrefs.getString(Constants.accessToken, "").toString()
+
+        exerciseViewModel.getDbCategories()
+        exerciseViewModel.getDbExercises()
 
     }
 
     override fun onResume() {
         super.onResume()
-        exerciseViewModel.exerciseCategoryLiveData.observe(this, Observer { exerciseCategory->
-            Toast.makeText(this, "fetched ${exerciseCategory.size} categories", Toast.LENGTH_LONG).show()
+        exerciseViewModel.exerciseCategoryLiveData.observe(this, Observer { categories->
+           if (categories.isEmpty()){
+               exerciseViewModel.fetchExerciseCategories(token)
+           }
+        })
+
+        exerciseViewModel.exerciseLiveData.observe(this, Observer { exercises->
+            if (exercises.isEmpty()){
+                exerciseViewModel.fetchExercises(token)
+            }
         })
 
         exerciseViewModel.errorLiveData.observe(this, Observer { error->
