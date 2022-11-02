@@ -41,4 +41,8 @@ class ExerciseViewModel: ViewModel() {
     fun getDbExercises(){
         exerciseLiveData = exerciseRepository.getDbExercises()
     }
+
+    fun getExercisesByCategoryId(categoryId:String){
+        exerciseLiveData = exerciseRepository.getExercisesByCategoryId(categoryId)
+    }
 }

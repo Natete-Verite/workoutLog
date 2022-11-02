@@ -53,4 +53,8 @@ class ExerciseRepository {
     fun getDbExercises(): LiveData<List<Exercise>>{
         return exerciseDao.getExercise()
     }
+
+    fun getExercisesByCategoryId(categoryId:String):LiveData<List<Exercise>>{
+        return exerciseDao.getExerciseByCategoryId(categoryId)
+    }
 }
