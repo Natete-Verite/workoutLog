@@ -21,22 +21,17 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding=FragmentProfileBinding.inflate(inflater,container,false)
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
+        sharedPrefs = activity?.applicationContext!!.getSharedPreferences("WORKOUTLOG_PREFS", AppCompatActivity.MODE_PRIVATE)
+        binding.tvLogout.setOnClickListener {
+            logoutRequest()
+        }
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.tvLogout.setOnClickListener {
-            sharedPrefs = this.requireActivity().getSharedPreferences(Constants.prefsFile, AppCompatActivity.MODE_PRIVATE)
-            val editor = sharedPrefs.edit()
-            editor.putString("ACCESS_TOKEN", "")
-            editor.putString("USER_ID", "")
-            editor.putString("PROFILE_ID", "")
-            editor.apply()
-
-            startActivity(Intent(this.context,LoginActivity::class.java))
-        }
+    fun logoutRequest() {
+        sharedPrefs.edit().clear().apply()
+        val intent = Intent(context, LoginActivity::class.java)
+        startActivity(intent)
     }
 }

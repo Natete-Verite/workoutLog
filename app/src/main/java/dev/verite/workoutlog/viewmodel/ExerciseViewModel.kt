@@ -13,13 +13,12 @@ class ExerciseViewModel: ViewModel() {
     val exerciseRepository = ExerciseRepository()
     lateinit var exerciseCategoryLiveData : LiveData<List<ExerciseCategory>>
     lateinit var exerciseLiveData : LiveData<List<Exercise>>
-
     val errorLiveData = MutableLiveData<String?>()
 
     fun fetchExerciseCategories(accessToken: String){
         viewModelScope.launch {
             val response = exerciseRepository.fetchExerciseCategories(accessToken)
-            if (response.isSuccessful){
+            if (!response.isSuccessful){
                 errorLiveData.postValue(response.errorBody()?.string())
             }
         }

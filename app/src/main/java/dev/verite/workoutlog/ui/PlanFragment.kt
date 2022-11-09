@@ -44,7 +44,6 @@ class PlanFragment : Fragment() {
         setupDaySpinner()
         exerciseViewModel.getDbCategories()
         setupCategorySpinner()
-        setupExerciseSpinner()
         bind.btnAddItem.setOnClickListener { clickAddItem() }
         checkForExistingWorkoutPlan()
         bind.btnSaveDay.setOnClickListener { clickSaveDay() }
@@ -71,6 +70,7 @@ class PlanFragment : Fragment() {
                 val selectedCategory = displayCategories.get(p2)
                    val categoryId = selectedCategory.categoryId
                    exerciseViewModel.getExercisesByCategoryId(categoryId)
+                   setupExerciseSpinner()
 
                }
 
