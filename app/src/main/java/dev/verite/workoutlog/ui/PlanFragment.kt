@@ -43,6 +43,7 @@ class PlanFragment : Fragment() {
         super.onResume()
         setupDaySpinner()
         exerciseViewModel.getDbCategories()
+        exerciseViewModel.getDbExercises()
         setupCategorySpinner()
         bind.btnAddItem.setOnClickListener { clickAddItem() }
         checkForExistingWorkoutPlan()
