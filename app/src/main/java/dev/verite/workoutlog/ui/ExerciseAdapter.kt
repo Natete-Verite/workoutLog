@@ -23,7 +23,7 @@ ArrayAdapter<Exercise>(context,0,exercises){
     fun getCustomView(position: Int, convertView: View?, parent: ViewGroup):View{
         val view = LayoutInflater.from(context).inflate(R.layout.custom_spinner_exercise_item,parent,false)
         val tvSpinnerText = view.findViewById<TextView>(R.id.tvspinText)
-        tvSpinnerText.text = exercises.get(position).ExerciseName
+        tvSpinnerText.text = exercises.get(position).exerciseName
         return view
     }
 }

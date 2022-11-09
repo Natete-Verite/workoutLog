@@ -11,6 +11,7 @@ data class WorkoutLogRecord(
     var date: String,
     var exerciseId: String,
     var set: Int?,
+    var weight: Int,
     var reps: Int,
     var workoutPlanItemId: String,
     var userId: String

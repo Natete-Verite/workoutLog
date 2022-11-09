@@ -1,6 +1,7 @@
 package dev.verite.workoutlog.repository
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.liveData
 import dev.verite.workoutlog.WorkoutLog
 import dev.verite.workoutlog.database.WorkoutDb
 import dev.verite.workoutlog.models.WorkoutPlan
@@ -28,6 +29,10 @@ class WorkoutPlanRepository {
 
     fun getWorkoutPlanByUserId(userId: String): LiveData<WorkoutPlan>{
         return workoutPlanDao.getWorkoutPlanByUserId(userId)
+    }
+
+    fun getTodayWorkoutPlanItem(workoutPlanId: String, dayNumber: Int): LiveData<WorkoutPlanItem> {
+        return workoutPlanItemDao.getTodayWorkoutPlanItem(workoutPlanId, dayNumber)
     }
 
 }
